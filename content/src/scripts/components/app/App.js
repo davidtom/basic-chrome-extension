@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+import {addClickCount} from '../../../../../background/src/actions/clickActions';
 
 class App extends Component {
     constructor(props) {
@@ -8,9 +11,7 @@ class App extends Component {
 
     componentDidMount() {
         document.addEventListener('click', ()=> {
-            this.props.dispatch({
-                type:'ADD_CLICK_COUNT'
-            });
+            this.props.addClickCount();
         });
     };
 
@@ -31,4 +32,10 @@ const mapStateToProps = (state) => {
     };
 };
 
-export default connect(mapStateToProps, null)(App);
+const mapDispatchToProps = (dispatch) => {
+    return bindActionCreators({
+        addClickCount
+    }, dispatch);
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
