@@ -9,7 +9,7 @@ class App extends Component{
     render() {
         return (
             <div>
-                The count is: {this.props.count}
+                The count is: {this.props.count.clicks}
             </div>
         );
     }

@@ -1,10 +1,14 @@
-const initialState = 0;
+import initialState from '../initialState';
+import update from 'immutability-helper'
 
-export default (state = initialState, action) => {
+export default (count = initialState.count, action) => {
     switch (action.type) {
-        case 'ADD_COUNT':
-            return state + (action.payload || 1);
+        case 'ADD_CLICK_COUNT':
+            // return count + (action.payload || 1);
+            return update(count, {
+                clicks: {$set: count.clicks + (action.payload || 1)}
+            })
         default:
-            return state;
+            return count;
     }
 };

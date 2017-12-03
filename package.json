@@ -9,12 +9,12 @@
   "author": "David Tomczyk",
   "license": "MIT",
   "dependencies": {
+    "immutability-helper": "^2.5.1",
     "react": "^16.2.0",
     "react-chrome-redux": "^1.4.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
-    "redux-devtools-extension": "^2.13.2",
     "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
@@ -26,6 +26,7 @@
     "gulp-load-plugins": "^1.5.0",
     "gulp-rename": "^1.2.2",
     "gulp-util": "^3.0.8",
+    "redux-logger": "^3.0.6",
     "rimraf": "^2.6.2",
     "webpack": "^3.9.1"
   }

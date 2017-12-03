@@ -18,8 +18,11 @@ const proxyStore = new Store({
     portName: 'myApp'
 });
 
-// Wrap App with the store and render it on the page
-render( <Provider store={proxyStore}>
-            <App />
-        </Provider>
+// Wait for proxyStore to connect to the background page, then
+// wrap App with the store and render it on the page
+proxyStore.ready().then(() => {
+    render(<Provider store={proxyStore}>
+        <App />
+    </Provider>
         , document.getElementById('content-anchor'));
+});
