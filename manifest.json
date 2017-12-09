@@ -5,6 +5,8 @@
         "scripts": [
             "background.js"
         ],
+        // Set up as a background page (always open), rather than
+        // an event page (open as needed)
         "persistent": true
     },
     "manifest_version": 2,

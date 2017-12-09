@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import {addClickCount} from '../../../../../background/src/actions/clickActions';
+import {addClickCount} from '../../../../../background/src/actions/countActions';
 
 class App extends Component {
     constructor(props) {
@@ -16,11 +16,10 @@ class App extends Component {
     };
 
     render() {
-        console.log(this.props)
         return (
-            <div>
+            <div id="appName">
                 <p>Hey it's me, your chrome extension</p>
-                <p><label>The count is: </label>{this.props.count.clicks}</p>
+                <p><label>The click count is: </label>{this.props.count.clicks}</p>
             </div>
         );
     }

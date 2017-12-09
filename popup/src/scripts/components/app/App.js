@@ -1,15 +1,23 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+import { addClickCount } from '../../../../../background/src/actions/countActions'
 
 class App extends Component{
     constructor(props) {
         super(props)
     };
 
+    componentDidMount() {
+        console.log('Pop up!')
+    };
+
     render() {
         return (
             <div>
-                The count is: {this.props.count.clicks}
+                <p><label>The click count is: </label>{this.props.count.clicks}</p>
+                <button onClick={this.props.addClickCount}>Click me!</button>
             </div>
         );
     }
@@ -17,8 +25,14 @@ class App extends Component{
 
 const mapStateToProps = (state) => {
     return {
-        count: state.count
+        count: state.count,
     };
 };
 
-export default connect(mapStateToProps, null)(App);
+const mapDispatchToProps = (dispatch) => {
+    return bindActionCreators({
+        addClickCount
+    }, dispatch);
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
