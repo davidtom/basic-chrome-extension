@@ -33,7 +33,10 @@
         "space-before-blocks": 1,
         "no-var": 1,
         "no-trailing-spaces": 1,
-        "jsx-quotes": 1,
+        "jsx-quotes": [
+            "warn",
+            "prefer-single"
+        ],
         "react/display-name": 1,
         "react/forbid-prop-types": 0,
         "react/jsx-boolean-value": 0,
