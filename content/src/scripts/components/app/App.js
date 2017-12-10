@@ -2,10 +2,24 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { withStyles } from 'material-ui/styles';
+import { Paper } from 'material-ui';
 
 // import 'typeface-roboto';
 
 import { addClickCount } from '../../../../../background/src/actions/countActions';
+
+const styles = theme => ({
+    container: {
+        width: '200px',
+        height: '50px'
+    },
+    root: theme.mixins.gutters({
+        paddingTop: 16,
+        paddingBottom: 16,
+        marginTop: theme.spacing.unit * 3,
+    }),
+});
 
 class App extends Component {
     constructor(props) {
@@ -19,10 +33,15 @@ class App extends Component {
     };
 
     render() {
+
+        const { classes } = this.props;
+
         return (
-            <div id="appName">
-                <p>Hey it's me, your chrome extension</p>
-                <p><label>The click count is: </label>{this.props.count.clicks}</p>
+            <div id='appName' className='container'>
+                <Paper className={ classes.root } elevation = { 4 }>
+                    <p>Hey it's me, your chrome extension</p>
+                    <p><label>The click count is: </label>{this.props.count.clicks}</p>
+                </Paper>
             </div>
         );
     }
@@ -41,8 +60,9 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 App.propTypes = {
+    classes: PropTypes.object.isRequired,
     count: PropTypes.object.isRequired,
     addClickCount: PropTypes.func.isRequired
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(App));

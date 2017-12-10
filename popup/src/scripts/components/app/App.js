@@ -37,7 +37,7 @@ class App extends Component {
             <div className={ classes.container }>
                 <Chip
                     avatar={ <Avatar>{this.props.count.clicks || '0'}</Avatar> }
-                    label="Click count"
+                    label='Click count'
                     onClick={ this.props.addClickCount }
                     className={ classes.chip }
                 />
