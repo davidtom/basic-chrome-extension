@@ -11,7 +11,8 @@ import { addClickCount } from '../../../../../background/src/actions/countAction
 
 const styles = theme => ({
     container: {
-        background: 'black!important'
+        width: '200px',
+        height: '50px'
     },
     root: theme.mixins.gutters({
         paddingTop: 16,
