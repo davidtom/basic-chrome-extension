@@ -7,7 +7,7 @@ import {addClickCount} from '../../../../../background/src/actions/countActions'
 
 class App extends Component {
     constructor(props) {
-        super(props)
+        super(props);
     };
 
     componentDidMount() {
@@ -39,7 +39,8 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 App.propTypes = {
-    count: PropTypes.object.isRequired
-}
+    count: PropTypes.object.isRequired,
+    addClickCount: PropTypes.function.isRequired
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

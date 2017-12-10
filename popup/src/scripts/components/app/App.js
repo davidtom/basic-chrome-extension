@@ -3,15 +3,15 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { addClickCount } from '../../../../../background/src/actions/countActions'
+import { addClickCount } from '../../../../../background/src/actions/countActions';
 
-class App extends Component{
+class App extends Component {
     constructor(props) {
-        super(props)
+        super(props);
     };
 
     componentDidMount() {
-        console.log('Pop up!')
+        console.log('Pop up!');
     };
 
     render() {
@@ -37,7 +37,8 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 App.propTypes = {
-    count: PropTypes.object.isRequired
-}
+    count: PropTypes.object.isRequired,
+    addClickCount: PropTypes.function.isRequired
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
