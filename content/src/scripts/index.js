@@ -14,14 +14,14 @@ anchor.id = 'appNameContainer';
 // insert anchor as first child on page
 document.body.insertBefore(anchor, document.body.childNodes[0]);
 
-// // Create a shadow DOM root as a child of anchor
+// Create a shadow DOM root as a child of anchor
 const root = anchor.createShadowRoot();
 
-// // Create a div to append App to
+// Create a div to append App to
 const app = document.createElement('div');
 app.id = 'app';
 
-// // Append app to shadow DOM root
+// Append app to shadow DOM root
 root.append(app);
 
 // create a proxy store which passes actions and state changes between
