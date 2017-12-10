@@ -40,7 +40,7 @@ const mapDispatchToProps = (dispatch) => {
 
 App.propTypes = {
     count: PropTypes.object.isRequired,
-    addClickCount: PropTypes.function.isRequired
+    addClickCount: PropTypes.func.isRequired
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
