@@ -11,14 +11,13 @@ import { addClickCount } from '../../../../../background/src/actions/countAction
 
 const styles = theme => ({
     container: {
-        width: '200px',
-        height: '50px'
+        background: 'black!important'
     },
     root: theme.mixins.gutters({
         paddingTop: 16,
         paddingBottom: 16,
         marginTop: theme.spacing.unit * 3,
-    }),
+    })
 });
 
 class App extends Component {
@@ -37,9 +36,8 @@ class App extends Component {
         const { classes } = this.props;
 
         return (
-            <div id='appName' className='container'>
-                <Paper className={ classes.root } elevation = { 4 }>
-                    <p>Hey it's me, your chrome extension</p>
+            <div className={ classes.container }>
+                <Paper elevation = { 4 } className={ classes.root }>
                     <p><label>The click count is: </label>{this.props.count.clicks}</p>
                 </Paper>
             </div>
