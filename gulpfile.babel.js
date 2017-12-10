@@ -57,19 +57,19 @@ gulp.task('clean', (cb) => {
 
 gulp.task('build', ['copy-manifest', 'popup-js', 'popup-html', 'background-js', 'content-js']);
 
-// run default task after build
-gulp.task('default', ['build']);
-
-// run eslint after default task runs
+// task to run eslint; run after default task
 gulp.task('lint', ['default'], () => {
     return gulp.src(['**/*.js','!node_modules/**', '!build/**'])
         .pipe(eslint())
         .pipe(eslint.format());
 });
 
-// run watch after lint task runs
+// run default task after build
+gulp.task('default', ['build']);
+
+// run watch after default task
 gulp.task('watch', ['lint'], () => {
-    gulp.watch('popup/**/*', ['build']);
-    gulp.watch('content/**/*', ['build']);
-    gulp.watch('background/**/*', ['build']);
+    gulp.watch('popup/**/*', ['build', 'lint']);
+    gulp.watch('content/**/*', ['build', 'lint']);
+    gulp.watch('background/**/*', ['build', 'lint']);
 });

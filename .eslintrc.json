@@ -20,6 +20,10 @@
             "warn",
             "single"
         ],
+        "object-curly-spacing": [
+            "error",
+            "always"
+        ],
         "indent": 1,
         "semi": 1,
         "eol-last": 1,
