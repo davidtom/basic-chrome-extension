@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import {addClickCount} from '../../../../../background/src/actions/countActions';
+// import 'typeface-roboto';
+
+import { addClickCount } from '../../../../../background/src/actions/countActions';
 
 class App extends Component {
     constructor(props) {
