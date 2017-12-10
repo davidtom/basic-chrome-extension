@@ -20,4 +20,4 @@ const store = createStore(
 );
 
 // Wrap store in react-chrome-redux and set communication port name
-wrapStore(store, {portName: 'myApp'});
+wrapStore(store, { portName: 'myApp' });
